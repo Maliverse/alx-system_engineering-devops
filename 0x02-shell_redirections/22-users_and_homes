@@ -1,2 +1,2 @@
 #!/bin/bash
-getent /etc/passwd
+getent passwd | awk -F: '{if ($6 ~ /^\/etc\/passwd\//) print $1 ": " $6}'
